@@ -1,0 +1,7 @@
+<% layout('../../index') -%> <% include ../../partials/menu %>
+<a href="/admin/promos/create" class="btn btn-secondary">Creer une promo</a>
+
+<% promos.forEach(function(promo) { %>
+<li><%= promo.city %></li>
+<% }); %>
+

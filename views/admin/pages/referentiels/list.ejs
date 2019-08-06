@@ -1,0 +1,15 @@
+<% layout('../../index') -%> <% include ../../partials/menu %>
+
+<a href="/admin/referentiels/create" class="btn btn-secondary"
+  >Creer un referentiel</a
+>
+<% referentiels.forEach(function(referentiel) { %>
+<li>
+  <a
+    href="/admin/referentiels/show/<%= referentiel.id %> "
+    class="btn btn-secondary"
+    ><%= referentiel.title %></a
+  >
+</li>
+
+<% }); %>

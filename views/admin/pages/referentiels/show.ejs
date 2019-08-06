@@ -1,0 +1,117 @@
+<% layout('../../index') -%> <% include ../../partials/menu %>
+
+<div id="referentiel">
+  <div id="head-content">
+    <div class="left">
+      <p id="title"><%- referentiel.title %></p>
+
+      <form class="form-inline"
+        id="form_title_referentiel"
+        method="POST"
+        action="/admin/referentiels/activities/update"
+      >
+        <input
+          type="hidden"
+          name="referentiel_id"
+          value="<%- referentiel._id%>"
+        />
+        <input  class="form-control" type="text" name="title" value="<%- referentiel.title%>" />
+        <input class="btn btn-light" type="submit" />
+      </form>
+      <img
+        id="edit-title"
+        src="https://image.flaticon.com/icons/svg/1159/1159876.svg"
+        alt=""
+        class="cursor-pointer h-4 w-4 opacity-25 mr-8"
+      />
+    </div>
+    <div class="right">
+      <p id="activity-create">Ajouter une activité :</p>
+      <form class="form-inline" method="POST" action="/admin/referentiels/activities/create">
+        <input
+          type="hidden"
+          name="referentiel_id"
+          value="<%- referentiel._id%>"
+        />
+        <input  class="form-control" type="text" name="title" />
+
+        <input class="btn btn-light" type="submit" />
+      </form>
+    </div>
+  </div>
+
+  <div id="block">
+    <div id="right">
+      <% referentiel.activities.forEach(activity => { %>
+
+      <div class="activity-row">
+        <p>. <%- activity.title %></p>
+        <img
+          id="edit-activity"
+          src="https://image.flaticon.com/icons/svg/1159/1159876.svg"
+          alt=""
+          class="cursor-pointer h-4 w-4 opacity-25 mr-8"
+        />
+      </div>
+      <form class="form-inline"
+        id="form_title_competence"
+        method="POST"
+        action="/admin/referentiels/activities/competences/create"
+      >
+      <input
+      type="hidden"
+      name="referentiel_id"
+      value="<%- referentiel._id%>"
+    />
+        <input type="hidden" name="activity_id" value="<%- activity._id%>" />
+        <input type="text" class="form-control"  placeholder="Ajouter une compétence" name="title" />
+        <input class="btn btn-light" type="submit" />
+      </form>
+      <% activity.competences.forEach(competence => { %>
+
+      <p class="competence competence_<%- competence._id %>">
+        Competence <%- competence.title %>
+      </p>
+
+      <div class="level level_competence_<%- competence._id %>">
+        <form
+          method="POST"
+          action="/admin/referentiels/activities/competences/levels/create"
+        >
+        <input
+        type="hidden"
+        name="referentiel_id"
+        value="<%- referentiel._id%>"
+      />
+          <input
+            type="hidden"
+            name="competence_id"
+            value="<%- competence._id%>"
+          />
+          <input type="number" name="number" />
+          <input type="submit" />
+        </form>
+        <% competence.levels.forEach(level => { %>
+
+        <p>Level <%- level.number %></p>
+        <div>
+          <div>
+            <p>
+              Groupe d'actions à réaliser
+            </p>
+          </div>
+          <div>
+            <p>
+              Critères d'évaluation
+            </p>
+          </div>
+        </div>
+
+        <% }) %>
+      </div>
+      <% }) %> <% }) %>
+    </div>
+
+    <div id="left"></div>
+  </div>
+</div>

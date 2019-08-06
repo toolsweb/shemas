@@ -1,0 +1,22 @@
+<% layout('../layout') -%>
+
+
+<form action="/ask/roles" method="post">
+    <select id="promotion_id" name="promotion_id">
+        <% for (var i=0; i < promotions.length; i++) { %>
+            <option value="<%= promotions[i].id %>"><%= promotions[i].city %></option> 
+        <% } %>
+    </select>
+    <div>
+        <input type="radio" id="student" name="role" value="STUDENT" checked>
+        <label for="student">Apprenant</label>
+        </div>
+
+        <div>
+        <input type="radio" id="facilitator" name="role" value="FACILITATOR">
+        <label for="facilitator">Facilitateur</label>
+    </div>
+    <input type="submit">
+    
+</form>
+

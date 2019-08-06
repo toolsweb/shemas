@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+div,
+p {
+  margin: 0 !important;
+  padding: 0rem !important; }
+
+html,
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  font-family: "Poppins", sans-serif !important;
+  background-color: #eeeeee !important; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-self: center; }
+
+#right::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #aaa; }
+
+#right::-webkit-scrollbar-thumb {
+  background: #174086;
+  border-radius: 10px;
+  height: 70px; }
+
+#referentiel {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff; }
+  #referentiel img {
+    height: 1rem;
+    padding-left: 1rem !important; }
+  #referentiel .level {
+    display: none; }
+  #referentiel .active {
+    display: flex; }
+  #referentiel #head-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2b59a6;
+    color: #ffffff;
+    padding: 1rem !important; }
+    #referentiel #head-content .left,
+    #referentiel #head-content .right {
+      display: flex;
+      align-items: center; }
+    #referentiel #head-content .right form {
+      display: flex; }
+    #referentiel #head-content #edit-title {
+      height: 1rem;
+      padding-left: 1rem !important; }
+  #referentiel #block {
+    display: flex; }
+    #referentiel #block #right {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      overflow: overlay; }
+    #referentiel #block #left {
+      width: 80%; }
+  #referentiel .activity-row {
+    display: flex;
+    align-items: center;
+    background-color: #174086;
+    color: #ffffff;
+    padding: 0.5rem !important; }
+
+#form_title_referentiel {
+  display: flex; }
+
+#form_title_referentiel {
+  display: none; }
+
+#form_title_competence {
+  display: flex;
+  width: 100%; }
+  #form_title_competence input[name="title"] {
+    width: 80%; }
+  #form_title_competence input[type="submit"] {
+    width: 20%; }
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,34 @@
+
+
+
+<% layout('../../index') -%>
+<% include ../../partials/menu %>
+
+<div class="container">
+    <table id="userTable" class="table table-striped table-bordered" style="width:100%">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Role</th>
+              
+          </tr>
+      </thead>
+      <tbody>
+          <% users.forEach(function(item) { %>
+            <tr>
+                <td><%= item.name %></td>
+                <td><%= item.role %></td>
+               
+              
+            </tr>        
+          <% }); %>
+      </tbody>
+      <tfoot>
+          <tr>
+              <th>Name</th>
+              <th>Role</th>
+            
+          </tr>
+      </tfoot>
+  </table>
+</div>

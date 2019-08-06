@@ -1,0 +1,45 @@
+<% layout('../index') -%> <% include ../partials/menu %>
+
+<h1 class="mt-4">Dashboard Admin</h1>
+
+<table
+  id="askTable"
+  class="table table-striped table-bordered"
+  style="width:100%"
+>
+  <% asks.forEach(function(ask) { %>
+  <tr>
+    <form action="/admin/asks/confirmations" method="POST">
+      <input type="hidden" name="ask_id" value="<%= ask._id %>" />
+      <input type="hidden" name="user_id" value="<%= ask.user_id._id %>" />
+      <input
+        type="hidden"
+        name="promotion_id"
+        value="<%= ask.promotion_id._id %>"
+      />
+      <input type="hidden" name="role" value="<%= ask.role %>" />
+
+      <td><%= ask.user_id.name %></td>
+
+      <td><%= ask.user_id.email %></td>
+
+      <td><%= ask.role %></td>
+      <td><%= ask.promotion_id.city %></td>
+      <td><input type="submit" value="o" /></td>
+    </form>
+    <td>
+      <form action="/admin/asks/confirmations/blackhole" method="POST">
+        <input type="hidden" name="user_id" value="<%= ask.user_id._id %>" />
+        <input
+          type="hidden"
+          name="promotion_id"
+          value="<%= ask.promotion_id._id %>"
+        />
+        <input type="hidden" name="role" value="<%= ask.role %>" />
+        <input type="submit" value="x" />
+      </form>
+    </td>
+  </tr>
+
+  <% }); %>
+</table>

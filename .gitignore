@@ -1,2 +1,4 @@
 node_modules
 config/*.pem
+.env
+.sass-cache

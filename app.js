@@ -1,7 +1,5 @@
 require("dotenv").config();
 
-var formidable = require('formidable');
-
 const express = require("express");
 const passport = require("passport");
 const i18n = require("i18n-express");
@@ -30,8 +28,8 @@ const mongoose = require("./config/database")(config);
 require("./config/helmet")(app);
 require("./config/globale")(app, mongoose);
 
+// TODO
 app.use("/admin/login", require("./routes/admin/login.js"));
-app.use("/admin/promos", require("./routes/admin/promos.js"));
 app.use("/admin/referentiels", require("./routes/admin/referentiels.js"));
 app.use("/admin", isAdminAuthenticated, require("./routes/admin/admin.js"));
 

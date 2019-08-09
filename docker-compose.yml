@@ -5,10 +5,15 @@ services:
     container_name: docker-node-mongo
     restart: always
     build: .
+    volumes:
+    - .:/usr/src/app
+    working_dir: /usr/src/app
+    #command: nodemon --watch views -e js,ejs app.js
+    command: npm run dev
     env_file:
       - .env
     ports:
-      - '3000:3000'
+      - '80:3000'
     links:
       - mongo
   mongo:

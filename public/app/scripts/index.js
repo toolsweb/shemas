@@ -104,6 +104,3 @@ function previewFile(file) {
     parentNode.appendChild(img);
   };
 }
-
-//   $(document).ready(function() {
-// });

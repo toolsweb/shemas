@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Promotion = require("../../models/Promotion");
+const AskRoleConfirmation = require("../../models/AskRoleConfirmation");
 
 
 router.get("/roles", (req, res) => {

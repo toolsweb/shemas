@@ -4,6 +4,8 @@ const User = require("../../models/User");
 const Promo = require("../../models/Promotion");
 const AskRoleConfirmation = require("../../models/AskRoleConfirmation");
 
+require('./promos.js')(router);
+
 router.get("/dashboard", (req, res, next) => {
   Promo.find().then(promos => {
     console.log(promos);
@@ -50,7 +52,7 @@ router.post("/asks/confirmations", (req, res, next) => {
       }
     );
 
-    return res.redirect('/ask/confirmation')
+    return res.redirect('/asks/confirmation')
   });
 });
 

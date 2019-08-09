@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "concurrently \"nodemon app.js &\" \" sass --watch public/stylesheets/index.scss:public/stylesheets/index.css\""
+    "dev": "concurrently  \" sass --watch public/stylesheets/index.scss:public/stylesheets/index.css\" \"nodemon --watch views -e js,ejs app.js &\""
   },
   "keywords": [],
   "author": "",

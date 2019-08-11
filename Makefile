@@ -9,12 +9,16 @@ start_mongo:
 	mongo &
 
 docker:
+	sudo service mongod stop
 	sudo docker-compose build
 	sudo docker-compose up -d
-
+	sudo docker exec -it  docker-node-mongo bash -c 'migrate-mongo up'
+	sass --watch public/stylesheets/index.scss:public/stylesheets/index.css &
+	sudo docker-compose up
+	
 ssh:
 	sudo docker-compose up -d
-	sudo docker exec -it  docker-node-mongo bash -c 'migrate-mongo up'
+	sudo docker exec -it  docker-node-mongo bash
 
 
 docker_rebuild:

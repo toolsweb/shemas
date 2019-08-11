@@ -8,7 +8,6 @@ services:
     volumes:
     - .:/usr/src/app
     working_dir: /usr/src/app
-    #command: nodemon --watch views -e js,ejs app.js
     command: npm run dev
     env_file:
       - .env

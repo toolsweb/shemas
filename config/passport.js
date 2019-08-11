@@ -1,10 +1,8 @@
 const LocalStrategy = require('passport-local').Strategy;
 const DiscordStrategy = require('passport-discord').Strategy;
 
-const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-// Load User model
 const User = require('../models/User');
 const Admin = require('../models/Admin');
 

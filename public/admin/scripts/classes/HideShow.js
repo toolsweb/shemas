@@ -4,14 +4,14 @@ class HideShow {
     $("#left").html($button);
     $("#right > .level").remove();
     $(".competence").click(e => {
-      this.hide_show(".level", ".level_" + e.target.classList[1]);
+      HideShow.hide_show(".level", ".level_" + e.target.classList[1]);
     });
     $("#edit-title").click(e => {
-      this.hide_show("#title", "#form_title_referentiel");
+      HideShow.hide_show("#title", "#form_title_referentiel");
     });
   }
 
-  hide_show = (hide, show) => {
+  static hide_show = (hide, show) => {
     $(hide).hide();
     $(show).show();
   };

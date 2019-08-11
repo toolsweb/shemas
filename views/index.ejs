@@ -1,0 +1,27 @@
+<% layout('layout') -%>
+
+<div id="sidenav" class="sidenav">
+  <a href="javascript:void(0)" id="closeNav" class="closebtn">&times;</a>
+  <a href="#"><%=translation.my_account%></a>
+  <a href="#">
+    <i class="fa fa-home" aria-hidden="true"></i>
+    <%=translation.home%>
+  </a>
+  <a href="#"><%=translation.briefs.title%></a>
+  <a href="/brief/create"><%=translation.briefs.create%></a>
+  <a href="/brief/explore"><%=translation.briefs.explore%></a>
+  <a href="#">Contact</a>
+</div>
+
+<div id="main">
+  <header>
+    <i  id="openNav"class='fa fa-bars' ></i>
+    <a href="?clang=fr">Fr</a>
+    <a href="?clang=en">En</a>
+    <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
+    </a>
+  </header>
+  <div id="content">
+    <%- body %>
+  </div>
+</div>

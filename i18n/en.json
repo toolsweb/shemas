@@ -3,5 +3,5 @@
   "CONTACT_TEXT": "More bla",
   "my_account": "My account",
   "home": "Home",
-  "briefs": "Briefs"
+  "briefs": { "title": "Briefs", "create": "Creer un briefs", "explore": "Explorer les briefs" }
 }

@@ -1,10 +1,3 @@
-const express = require('express');
-const router = express.Router();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
-// Load User model
-const Admin = require('../../models/Admin');
-const User = require('../../models/User');
 const Promo = require('../../models/Promotion');
 
 module.exports = function(router) {

@@ -40,7 +40,7 @@ router.post("/upload", (req, res) => {
   })
   form.on("fileBegin", function(name, file) {
     if (file.name)
-      file.path = __dirname + "/../public/uploads/" + file.name;   
+      file.path = __dirname + "/../../public/uploads/" + file.name;   
   });
   form.parse(req, (err, fields, files) => {
 

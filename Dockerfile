@@ -8,7 +8,6 @@ COPY . .
 RUN npm install -g migrate-mongo
 RUN npm install -g nodemon
 RUN npm install -g concurrently
-RUN npm install -g mongoose-fixture
 
 
 RUN npm install
